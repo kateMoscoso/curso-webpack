@@ -3,7 +3,7 @@
 **Webpack** es un empaquetador para Javascript y sus amigos. Convierte módulos con dependencias en archivos estáticos que los navegadores entienden.
 Nos permite empaquetar, optimizar los diferentes módulos Javascript y sus dependencia en nuestro proyecto. Es usado en proyectos basados en Javascript como: React, Vue, Angular entre otros.
 
-##User Experience
+## User Experience
 * Se logra con una aplicación que:
 * Funcione
 * Sea rápida
@@ -43,6 +43,11 @@ Nombre de los entry points
 ```
 filename: 'js/[name].js'
 ```
+
+## Manejo de assets con Loaders
+Los Loaders son la funcionalidad que nos da Webpack para interpretar tipos de archivos no soportados de forma nativa por Javascript.
+
+**style-loader** sirve para inyectar un tag style (el CSS) al DOM de nuestro HTML, mientras que **css-loader** sólo sirve para interpretar archivos CSS.
 
 ## HINTS
 

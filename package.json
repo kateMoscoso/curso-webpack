@@ -8,7 +8,8 @@
     "build": "webpack --mode development",
     "build:local": "webpack --mode production",
     "build:external": "webpack --config ./external/webpack.config.js",
-    "build:multi": "webpack --config ./multi-entry-points/webpack.config.js"
+    "build:multi": "webpack --config ./multi-entry-points/webpack.config.js",
+    "build:css": "webpack --config ./css-style-loader/webpack.config.js"
   },
   "keywords": [
     "webpack"
@@ -24,6 +25,8 @@
   },
   "homepage": "https://github.com/kateMoscoso/curso-webpack#readme",
   "dependencies": {
+    "css-loader": "3.1.0",
+    "style-loader": "0.23.1",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6"
   }
