@@ -1,0 +1,29 @@
+{
+  "name": "curso-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode development",
+    "build:local": "webpack --mode production",
+    "build:external": "webpack --config ./external/webpack.config.js"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kateMoscoso/curso-webpack.git"
+  },
+  "author": "kateMoscoso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kateMoscoso/curso-webpack/issues"
+  },
+  "homepage": "https://github.com/kateMoscoso/curso-webpack#readme",
+  "dependencies": {
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
