@@ -59,4 +59,12 @@ Los **Plugins** sirven para extender las capacidades de webpack y dar más poder
 npm install --save--dev --save-exact webpack
 npx webpack -v
 npx webpack --entry ./index.js --output ./bundle.js --mode development
+
+mini-css-extract-plugin
+```
+
+Indexar flags -- {flags}
+
+```
+npm run build:dev -- -w
 ```
