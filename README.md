@@ -72,3 +72,20 @@ npm run build:dev -- -w
 Javascript es un lenguaje moderno en evolución, siempre agregando nuevas funciones. El problema es que al ser interpretado en el navegador, no tenemos control sobre que versión de Javascript soportan y por lo tanto que funciones.
 
 Para poder usar Javascript moderno y tener una buena Developer Experience sin afectar la User Experience, existe Babel. **Babel** transpila nuestro código moderno de Javascript a una una versión que todos los navegadores pueden entender.
+
+Desde la versión 7 de babel se instala con el @
+
+## Soporte de JSX (React)
+**JSX** es un lenguaje de templates para React que permite definir componentes con un código muy similar al HTML.
+
+No existe navegador que entienda JSX porque no es un estándar, es algo especifico de React. Afortunadamente Babel puede transpilar el código JSX de nuestros archivos JS a código que el navegador.
+
+## Soporte imágenes, fuentes y videos
+
+Para soportar la importación de archivos binarios en nuestro código Javascript cómo lo son: fuentes, imágenes y videos, podemos usar **url-loader**.
+
+url-loader transforma archivos a un cadena de texto base64 para que carguen dentro de nuestros archivos Javascript y así ahorrarnos un request al servidor por cada archivo transformado.
+
+Debemos tomar en cuenta que sólo nos conviene convertir archivos pequeños, ya que archivos muy grandes podrían hacer nuestro archivo bundle muy pesado. Es por esto que la opción limit del url-loader sirve para asignar el peso máximo que un archivo puede tener para ser transformado en base64.
+
+No olvides instalar file-loader junto con url-loader ya que cuando se sobrepasa el limite establecido en la opción limit y el archivo no pueda ser transformado a base64, url-loader hará uso del file-loader para insertar un nombre y ruta de archivo en el lugar correspondiente.
