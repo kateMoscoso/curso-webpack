@@ -68,3 +68,7 @@ Indexar flags -- {flags}
 ```
 npm run build:dev -- -w
 ```
+
+Javascript es un lenguaje moderno en evolución, siempre agregando nuevas funciones. El problema es que al ser interpretado en el navegador, no tenemos control sobre que versión de Javascript soportan y por lo tanto que funciones.
+
+Para poder usar Javascript moderno y tener una buena Developer Experience sin afectar la User Experience, existe Babel. **Babel** transpila nuestro código moderno de Javascript a una una versión que todos los navegadores pueden entender.
