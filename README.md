@@ -49,6 +49,10 @@ Los Loaders son la funcionalidad que nos da Webpack para interpretar tipos de ar
 
 **style-loader** sirve para inyectar un tag style (el CSS) al DOM de nuestro HTML, mientras que **css-loader** sólo sirve para interpretar archivos CSS.
 
+Los **Plugins** sirven para extender las capacidades de webpack y dar más poder a los loaders.
+
+
+
 ## HINTS
 
 ```
