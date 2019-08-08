@@ -87,5 +87,8 @@ Para soportar la importación de archivos binarios en nuestro código Javascript
 url-loader transforma archivos a un cadena de texto base64 para que carguen dentro de nuestros archivos Javascript y así ahorrarnos un request al servidor por cada archivo transformado.
 
 Debemos tomar en cuenta que sólo nos conviene convertir archivos pequeños, ya que archivos muy grandes podrían hacer nuestro archivo bundle muy pesado. Es por esto que la opción limit del url-loader sirve para asignar el peso máximo que un archivo puede tener para ser transformado en base64.
+limit cuenta los bytes que va a tener el fichero 
 
 No olvides instalar file-loader junto con url-loader ya que cuando se sobrepasa el limite establecido en la opción limit y el archivo no pueda ser transformado a base64, url-loader hará uso del file-loader para insertar un nombre y ruta de archivo en el lugar correspondiente.
+
+Es una práctica común usar preprocesadores de CSS como: Sass, Less, Stylus y hasta PostCSS. Webpack permite integrar estos preprocesadores en su configuración a través de loaders, sólo ten cuidado con las peerDependencies que son dependencias que el loader espera estén instaladas previamente, como el caso de stylus para stylus-loader.
