@@ -1,21 +1,17 @@
 const path = require('path')
-const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const webpack = require('webpack')
 
 module.exports = {
   entry: {
     home: path.resolve(__dirname,'src/js/index.js'),
+    contact: path.resolve(__dirname,'src/js/contact.js'),
   },
-  mode: 'development',
+  mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js'
-  },
-  devServer: {
-    hot: true,
-    open: true,
-    port: 9000,
   },
   module: {
     rules: [
@@ -27,7 +23,9 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           {
             loader: 'css-loader',
             options: {
@@ -40,7 +38,9 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
-          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           'css-loader',
           'less-loader',
         ]
@@ -48,7 +48,9 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           'css-loader',
           'sass-loader',
         ]
@@ -56,7 +58,9 @@ module.exports = {
       {
         test: /\.styl$/,
         use: [
-          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           'css-loader',
           'stylus-loader',
         ]
@@ -73,18 +77,17 @@ module.exports = {
     ]
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].css',
+      chunkFilename: 'css/[id].css'
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: 'webpack-dev-server',
       template: path.resolve(__dirname, 'index.html')
     }),
+    new webpack.DllReferencePlugin({
+      manifest: require('./modules-manifest.json')
+    })
   ],
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      minSize: 0,
-      name: 'commons'
-
-    }
-  }
 }

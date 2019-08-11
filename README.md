@@ -92,3 +92,10 @@ limit cuenta los bytes que va a tener el fichero
 No olvides instalar file-loader junto con url-loader ya que cuando se sobrepasa el limite establecido en la opción limit y el archivo no pueda ser transformado a base64, url-loader hará uso del file-loader para insertar un nombre y ruta de archivo en el lugar correspondiente.
 
 Es una práctica común usar preprocesadores de CSS como: Sass, Less, Stylus y hasta PostCSS. Webpack permite integrar estos preprocesadores en su configuración a través de loaders, sólo ten cuidado con las peerDependencies que son dependencias que el loader espera estén instaladas previamente, como el caso de stylus para stylus-loader.
+
+## Añadiendo un Dynamic Link Library
+Mientras más librerías agregamos más lento se empiezan a volver nuestros builds, arruinando así la Developer Experience. Por suerte podemos crear una (o varias) Dynamic Link Library para acortar estos tiempos.
+
+Una Dynamic Link Library (DLL)[https://webpack.js.org/plugins/dll-plugin/] es un conjunto de librerías comunes que no cambian frecuentemente por lo que se hace un build por adelantado de las mismas para no re-empaquetar cada vez que hacemos build de nuestra aplicación.
+
+Beneficiando tanto la Developer Experience como la User Experience ya que el caché del navegador va a mantener una copia que solo va a cambiar cuando nosotros agreguemos o quitemos alguna dependencia, ahorrando así valiosos requests al servidor.
