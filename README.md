@@ -1,5 +1,5 @@
 # curso-webpack
-
+**npm init** Arrancamos un proyecto en javascript orientados a modulos
 **Webpack** es un empaquetador para Javascript y sus amigos. Convierte módulos con dependencias en archivos estáticos que los navegadores entienden.
 Nos permite empaquetar, optimizar los diferentes módulos Javascript y sus dependencia en nuestro proyecto. Es usado en proyectos basados en Javascript como: React, Vue, Angular entre otros.
 
@@ -24,13 +24,13 @@ Nos permite empaquetar, optimizar los diferentes módulos Javascript y sus depen
 
 CLI (Command Line Interface) que nos va a permitir interactuar y configurar Webpack desde la terminal.
 
-El comando webpack tiene una bandera llamada --mode que nos permite cambiar entre los modos producción y desarrollo. Recuerda que por defecto nos pone en modo producción si no la especificamos.
+El comando webpack tiene una bandera llamada --mode que nos permite cambiar entre los modos producción y desarrollo. *Recuerda que por defecto nos pone en modo producción si no la especificamos*.
 
 
 
 ##Iniciando un webpack.config
 Al ir creciendo nuestra configuración de Webpack iremos agregando cada vez más banderas a nuestros comandos y terminará como una línea gigante en la terminal. ¿Cómo hacemos que esa línea sea muy pequeñita, personalizable y escalable? Por medio de un archivo llamado por defecto webpack.config.js.
-Este archivo permite importar módulos usando el formato commonJS y recibe por lo menos dos configuraciones básicas, un entry y un output.
+Este archivo permite importar módulos usando el formato commonJS(modulos de node) y recibe por lo menos dos configuraciones básicas, un entry y un output.
 
 **Entry Point:** Es la ruta del archivo principal de nuestra aplicación JS a ser procesado por Webpack. Se pueden tener varios Entry Points.
 **Output:** Es la ruta de salida donde va a generar nuestro bundle con todos nuestros archivos especificados como Entry Points empaquetados en uno sólo.
@@ -99,3 +99,5 @@ Mientras más librerías agregamos más lento se empiezan a volver nuestros buil
 Una Dynamic Link Library (DLL)[https://webpack.js.org/plugins/dll-plugin/] es un conjunto de librerías comunes que no cambian frecuentemente por lo que se hace un build por adelantado de las mismas para no re-empaquetar cada vez que hacemos build de nuestra aplicación.
 
 Beneficiando tanto la Developer Experience como la User Experience ya que el caché del navegador va a mantener una copia que solo va a cambiar cuando nosotros agreguemos o quitemos alguna dependencia, ahorrando así valiosos requests al servidor.
+
+https://docs.google.com/presentation/d/13R2BNhh-92EOSgivW3CbN9GXbat2sfrAzdWNGeIaWCs/edit
